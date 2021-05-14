@@ -11,6 +11,10 @@ if (isset($_COOKIE['uname']) && isset($_COOKIE['passwd'])){
         //     setcookie('passwd',$password,time()+(60));
             header('Location: home.php');
             exit;
+    }else{
+        out_of_biscuits();
+        header('Location: home.php');
+        exit;
     }
 }else{
     $uname = $_POST['username'];
