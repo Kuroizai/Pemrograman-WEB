@@ -40,5 +40,8 @@ if (isset($_COOKIE['mail']) && isset($_COOKIE['passwd'])){
                 </form>
             </div>
         </div>
+    <p>Try :</p>
+    <p>Uname : admin1</p>
+    <p>Password : admin</p>
     </div>
 <?= create_footer();?>
