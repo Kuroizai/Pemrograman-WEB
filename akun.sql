@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2021 at 01:48 PM
+-- Generation Time: May 14, 2021 at 06:56 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -24,32 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `emails`
+-- Table structure for table `akun`
 --
 
-CREATE TABLE `emails` (
+CREATE TABLE `akun` (
   `ID` int(11) NOT NULL,
-  `Mail` text NOT NULL,
+  `Username` text NOT NULL,
   `Password` text NOT NULL,
   `User` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `emails`
+-- Dumping data for table `akun`
 --
 
-INSERT INTO `emails` (`ID`, `Mail`, `Password`, `User`) VALUES
-(1, 'admin@gmail.com', 'admin', 'Admin'),
-(2, 'admin2@gmail.com', 'admin', 'Admin');
+INSERT INTO `akun` (`ID`, `Username`, `Password`, `User`) VALUES
+(1, 'admin1', 'admin', 'Admin'),
+(2, 'admin2', 'admin', 'Admin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `emails`
+-- Indexes for table `akun`
 --
-ALTER TABLE `emails`
+ALTER TABLE `akun`
   ADD PRIMARY KEY (`ID`);
 COMMIT;
 

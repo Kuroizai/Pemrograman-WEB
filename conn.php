@@ -14,7 +14,7 @@
 
     function get_columns(){
         global $myconn;
-        $stmt = $myconn->prepare('SELECT * FROM emails ORDER BY ID');
+        $stmt = $myconn->prepare('SELECT * FROM akun ORDER BY ID');
         $stmt->execute();
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $res;

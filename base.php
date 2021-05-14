@@ -29,9 +29,9 @@ function create_footer(){
 }
 
 function biscuits(){
-    if (isset($_COOKIE['mail']) && isset($_COOKIE['passwd'])){
+    if (isset($_COOKIE['uname']) && isset($_COOKIE['passwd'])){
         // echo 'Alredy Set';
-        $mail = $_COOKIE['mail'];
+        $mail = $_COOKIE['uname'];
         $passwd = $_COOKIE['passwd'];
 
         $res = get_columns();
@@ -39,10 +39,14 @@ function biscuits(){
 
         foreach($res as $data){
             // print_r($data);
-            $auth = (($mail == $data['Mail']) && ($passwd == $data['Password']))? True: False;
+            $auth = (($mail == $data['Username']) && ($passwd == $data['Password']))? TRUE: FALSE;
             // echo $_SESSION['auth'].'<br>';
-            echo $auth;
-        }return $auth;
+            // echo $auth;
+            if ($auth){
+                echo $auth;
+                return $auth;
+            }
+        }
     }
 }
 
@@ -52,8 +56,8 @@ function out_of_biscuits(){
     session_unset();
     session_destroy();
 
-    setcookie('mail', '', time() - 3600 );
-    setcookie('password', '', time() - 3600 );
+    setcookie('uname', '', time() - 3600 ,'/');
+    setcookie('passwd', '', time() - 3600 ,'/');
 
     header('location: index.php');
     exit;
